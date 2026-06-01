@@ -1,0 +1,15 @@
+# Brainstorming scratch / local tooling
+.superpowers/
+
+# OS / editor
+Thumbs.db
+.DS_Store
+*.log
+.vscode/
+.idea/
+
+# Vercel
+.vercel/
+
+# Node (not used now, but safe)
+node_modules/
