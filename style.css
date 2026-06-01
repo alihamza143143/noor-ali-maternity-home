@@ -130,8 +130,15 @@ em{font-style:italic;color:var(--rose-400)}
 .hero h1{margin-bottom:1.1rem}
 .hero-sub{font-size:clamp(1rem,2vw,1.18rem);color:var(--muted);max-width:600px;margin:0 auto 2rem}
 .hero-cta{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.6rem}
-.hero-loc{display:inline-flex;align-items:center;gap:.4em;color:var(--maroon);font-weight:500;font-size:.95rem}
+.hero-loc{display:inline-flex;align-items:center;gap:.45em;color:var(--maroon);font-weight:500;font-size:.95rem;transition:color .2s}
 .hero-loc .ico{color:var(--rose-400)}
+.hero-loc:hover{color:var(--maroon-dark)}
+.hero-loc-cta{
+  font-size:.72rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+  color:var(--maroon);background:#fff;padding:.3em .7em;border-radius:50px;
+  box-shadow:var(--shadow-sm);
+}
+.hero-loc:hover .hero-loc-cta{background:var(--rose-100)}
 
 /* ---------- Trust strip ---------- */
 .trust-strip{background:var(--maroon);color:#fff}
@@ -225,8 +232,20 @@ em{font-style:italic;color:var(--rose-400)}
 .visit-list strong{display:block;color:var(--maroon-dark);font-family:var(--font);font-weight:600}
 .visit-list span{color:var(--muted);font-size:.95rem}
 .visit-list a:hover{color:var(--maroon);text-decoration:underline}
-.visit-map{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);border:6px solid #fff;height:100%;min-height:340px}
+.visit-map{
+  position:relative;display:block;border-radius:var(--radius);overflow:hidden;
+  box-shadow:var(--shadow);border:6px solid #fff;height:100%;min-height:340px;
+}
 .visit-map iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
+.visit-map-overlay{
+  position:absolute;left:50%;bottom:14px;transform:translateX(-50%);
+  display:inline-flex;align-items:center;gap:.4em;
+  background:var(--maroon);color:#fff;font-weight:600;font-size:.85rem;
+  padding:.6em 1.1em;border-radius:50px;box-shadow:0 8px 20px rgba(125,43,78,.35);
+  white-space:nowrap;transition:background .2s, transform .2s;
+}
+.visit-map-overlay::before{content:"📍"}
+.visit-map:hover .visit-map-overlay{background:var(--maroon-dark);transform:translateX(-50%) translateY(-2px)}
 
 /* ---------- Contact ---------- */
 .contact{text-align:center;background:linear-gradient(180deg,#fdeef2,#fff7f3)}
